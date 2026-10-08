@@ -1,0 +1,34 @@
+$ make build-book MDBOOK=/opt/homebrew/bin/mdbook
+fatal: No tags can describe '7aff815bc4939747e7acedf0ebe5cb9f55845a6f'.
+Try --always, or create some tags.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C docs/book build
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C /private/tmp/capi-manual-verification/pr-7030/docs/book/../../ runtime-openapi-gen
+fatal: No tags can describe '7aff815bc4939747e7acedf0ebe5cb9f55845a6f'.
+Try --always, or create some tags.
+cd hack/tools; go build -tags=tools -o bin/runtime-openapi-gen sigs.k8s.io/cluster-api/hack/tools/runtime-openapi-gen
+/private/tmp/capi-manual-verification/pr-7030/hack/tools/bin/runtime-openapi-gen --version book --output-file ./src/developer/runtime-extensions/runtime-sdk-openapi.yaml
+/opt/homebrew/bin/mdbook build
+ INFO Book building has started
+ INFO Running the html backend
+ WARN unexpected HTML end tag `</section>` found in `user/quick-start.md`
+Check that the HTML tags are properly balanced.
+ WARN unclosed HTML tag `<value>` found in `reference/api/crd-api-reference.md` while exiting TableCell
+HTML tags must be closed before exiting a markdown element.
+ WARN unclosed HTML tag `<type>` found in `reference/api/crd-api-reference.md` while exiting TableCell
+HTML tags must be closed before exiting a markdown element.
+ WARN unclosed HTML tag `<num>` found in `reference/api/crd-api-reference.md` while exiting TableCell
+HTML tags must be closed before exiting a markdown element.
+ WARN unclosed HTML tag `<value>` found in `reference/api/crd-api-reference-v1beta1.md` while exiting TableCell
+HTML tags must be closed before exiting a markdown element.
+ WARN unclosed HTML tag `<type>` found in `reference/api/crd-api-reference-v1beta1.md` while exiting TableCell
+HTML tags must be closed before exiting a markdown element.
+ WARN unclosed HTML tag `<num>` found in `reference/api/crd-api-reference-v1beta1.md` while exiting TableCell
+HTML tags must be closed before exiting a markdown element.
+ INFO HTML book written to `/private/tmp/capi-manual-verification/pr-7030/docs/book/book`
+
+$ make verify-capi-book-summary
+fatal: No tags can describe '7aff815bc4939747e7acedf0ebe5cb9f55845a6f'.
+Try --always, or create some tags.
+TRACE=0 ./hack/scripts/verify/verify-capi-book-summary.sh
+
+$ git diff --check
