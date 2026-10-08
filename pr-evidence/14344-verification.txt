@@ -1,0 +1,8 @@
+$ go test -v ./extension/handlers/topologymutation -run "^TestHandler_DiscoverVariables$" -count=1
+=== RUN   TestHandler_DiscoverVariables
+--- PASS: TestHandler_DiscoverVariables (0.00s)
+PASS
+ok  	sigs.k8s.io/cluster-api/test/extension/handlers/topologymutation	0.778s
+
+$ go test ./extension/handlers/topologymutation -count=1
+ok  	sigs.k8s.io/cluster-api/test/extension/handlers/topologymutation	0.807s
